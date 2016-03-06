@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+  <button id="gitbtn">Git</button>
+  <p></p>
+<script type="text/javascript">
+  $("#gitbtn").on("click", function(){
+    $.get("https://api.github.com/users/cwright777", displayName)
+    function displayName(data) {
+      $("body").append("<p>" + data["login"] + "</p>")
+      console.log(data["login"]);
+    }
+  })
+</script>
+</body>
+</html>
